@@ -10,9 +10,9 @@ def calc_fishes(days: int, lantern_fishes: Dict[int, int]) -> int:
         new_fishes = lantern_fishes[0]
         lantern_fishes[0] = 0
         for i in range(1, 9):
-            if lantern_fishes[i] == 0:
-                continue
             fish_count = lantern_fishes[i]
+            if fish_count == 0:
+                continue
             lantern_fishes[i] -= fish_count
             lantern_fishes[i - 1] += fish_count
         lantern_fishes[8] += new_fishes
